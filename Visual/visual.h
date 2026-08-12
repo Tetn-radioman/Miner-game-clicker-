@@ -7,6 +7,7 @@
 #include <QWidget>
 #include <QVector>
 #include <QPushButton>
+#include <QIcon>
 
 class Visual : public QMainWindow
 {
@@ -19,6 +20,8 @@ public:
 private:
     void setupUI();  // Только создание виджетов и layout'ов
     void setupMiddle();
+    void setupTop();
+    void setupBottom();
 
     // Базовые элементы (пустые, без логики)
     QWidget *centralWidget;

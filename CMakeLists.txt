@@ -17,6 +17,7 @@ qt_add_executable(Miner
     Core/corelogic.h Core/corelogic.cpp
     Visual/visual.h Visual/visual.cpp
     Core/miner.h Core/miner.cpp
+    any.qrc
 )
 
 target_link_libraries(Miner

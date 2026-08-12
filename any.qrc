@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/Btn/miner"/>
+    <qresource prefix="/Btn/pc">
+        <file>1.png</file>
+        <file>2.png</file>
+        <file>3.png</file>
+    </qresource>
+    <qresource prefix="/Btn">
+        <file>textures/server/1.png</file>
+        <file>textures/server/2.png</file>
+        <file>textures/server/3.png</file>
+    </qresource>
+</RCC>
