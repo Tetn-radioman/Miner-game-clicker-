@@ -4,10 +4,11 @@
 #include <QMainWindow>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
-#include <QWidget>
-#include <QVector>
 #include <QPushButton>
-#include <QIcon>
+#include <QComboBox>
+#include <QMessageBox>
+#include <QDebug>
+#include "corelogic.h"
 
 class Visual : public QMainWindow
 {
@@ -17,19 +18,26 @@ public:
     Visual(QWidget *parent = nullptr);
     ~Visual();
 
+    void setLogic(CoreLogic* logic);
+    void updateCell(int index);
+
+public slots:
+    void miniBar(int index);
+
 private:
-    void setupUI();  // Только создание виджетов и layout'ов
-    void setupMiddle();
+    void setupUI();
     void setupTop();
+    void setupMiddle();
     void setupBottom();
+    void updateCellTexture(int index, const CellData& cell);
 
-    // Базовые элементы (пустые, без логики)
-    QWidget *centralWidget;
-    QVBoxLayout *mainLayout;  // Вот твой VBoxL
-    QVBoxLayout *middleLayout;
-
-    //QVector<QHBoxLayout*> HBoxL;
-    //QVector<QPushButton*> buttons; // Вектор указателей на кнопки
+    QWidget* centralWidget;
+    QVBoxLayout* mainLayout;
+    QHBoxLayout* topLayout;
+    QHBoxLayout* bottomLayout;
+    QVBoxLayout* middleLayout;
+    std::array<QPushButton*, 8> cellButtons;
+    CoreLogic* logic;
 };
 
 #endif // VISUAL_H

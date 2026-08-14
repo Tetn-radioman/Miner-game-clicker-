@@ -18,6 +18,8 @@ qt_add_executable(Miner
     Visual/visual.h Visual/visual.cpp
     Core/miner.h Core/miner.cpp
     any.qrc
+    Core/room.h Core/room.cpp
+    Core/core.h Core/core.cpp
 )
 
 target_link_libraries(Miner

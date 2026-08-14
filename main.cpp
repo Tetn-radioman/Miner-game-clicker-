@@ -1,19 +1,23 @@
 #include <QApplication>
 #include "visual.h"
-
-#include <QApplication>
-#include <QPushButton>
-#include <QVBoxLayout>
-#include <QWidget>
-
+#include "core.h"
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-    Visual window;
-    window.show();
+    // Создаем ядро
+    Core core;
 
+    // Создаем визуал
+    Visual visual;
+    visual.setLogic(core.getLogic());
+
+    // Запускаем ядро
+    core.start();
+
+    // Показываем визуал
+    visual.show();
 
     return app.exec();
 }
